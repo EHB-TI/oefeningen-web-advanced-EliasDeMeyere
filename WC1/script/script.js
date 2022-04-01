@@ -83,3 +83,12 @@ console.log(Longest_Country_Name(landen));*/
 let dag = d.getDate();
 console.log(`Vandaag is het ${d.getDay()}, ${d.getMonth() + 1}, ${d.getFullYear()}`); */
 
+
+// Oefening 13
+/* const vandaag = new Date();
+const verjaardag = new Date(2022, 8, 6);
+
+let Difference_In_Time = verjaardag.getTime() - vandaag.getTime();
+let Difference_In_Days = Math.abs(Difference_In_Time / (1000 * 3600 * 24));
+
+console.log(Difference_In_Days); */
