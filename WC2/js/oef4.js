@@ -29,6 +29,7 @@ let richting = prompt("Welke richting volgt u?");
 student.setPersonalDetails(naam, leeftijd, richting)
 
 while (true){
+    //While(true) blijft herhalen tot er een 'break' statement in de code is (zie line 38)
     let c = prompt('Course?');
     if (c){
         student.addCourse(c);
