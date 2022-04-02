@@ -1,11 +1,9 @@
 'use strict';
 window.onload = function(){
-    //code executes when page is done loading.
-    //Get the buttons and add eventlisteners
-    document.getElementById('create').addEventListener('click', createStudent);
-    document.getElementById('show').addEventListener('click', showStudents);
+    console.log("Script Loaded!")
+    document.getElementById('register').addEventListener('click', createStudent);
 
-    let listStudents = [];//List of students
+    let listStudents = []; // Lijst van de studenten
 
     //Student object constructor
     function Student(name, age, degree){
@@ -32,24 +30,22 @@ window.onload = function(){
         //ask for details
         let name = document.getElementById("inputName").value
         let age = document.getElementById("inputAge").value
-        let degree = document.getElementsByName("gridRadios").value
 
-        
-        let student = new Student(name,age,degree);
+        let radios = document.querySelector('input[type=radio]:checked');
+        let boxes = document.querySelectorAll('input[type=checkbox]:checked');
 
-        //ask for all the courses
-        /* while(true){
-            let c = prompt('Course?');
-            if (c) {
-                student.addCourse(c);
-            } else {
-                break;
-            }
+        let student = new Student(name,age, radios.value);
+        for(let c of boxes){
+            student.addCourse(c.value);
         }
 
-        // Done. Add to list\
-        listStudents.push(student); */
+        
 
+
+        //Toevoegen aan lijst
+        listStudents.push(student); 
+
+        addAlert(true, 'Student is successfully registered');
     }
 
     function showStudents(){
@@ -61,10 +57,25 @@ window.onload = function(){
         }
     }
 
+    function addAlert(status, message){
+        //Function to add error or succes alert
+        let content = '';
+        if(status){
+            //success
+            content = `<div class="alert alert-success" role="alert">
+ ${message}
+</div>`
+        }else{
+            //Error
+            content = `<div class="alert alert-danger" role="alert">
+  ${message}
+</div>`
+        }
 
-    document.getElementById("deForm").addEventListener('submit', createStudent()){
-        SubmitEvent.preventDefault;
+        //Add content to messages div
+        document.getElementById('messages').innerHTML = content;
     }
+
 };
 
 
