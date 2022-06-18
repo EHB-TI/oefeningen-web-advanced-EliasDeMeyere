@@ -1,0 +1,9 @@
+{
+	"Name": "Elias De Meyere",
+	"Age": "20",
+	"Degree": "TI",
+	"Courses": {
+		"Course1": "Web Advanced",
+		"Course2": "Programming Essentials"
+	}
+}
