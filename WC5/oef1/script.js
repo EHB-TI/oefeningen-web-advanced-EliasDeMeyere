@@ -1,11 +1,12 @@
-window.onload = () => {
+window.onload = async () => {
+    console.log("LOADED");
 
+    let resultaat = await fetch('data.json');
+    let data = await resultaat.json();
+    console.log(data);
 
-    let resultaat = fetch("data.json")
-    .then(result => result.text())
-    .then(data => console.log(data))
-
-    let getP = document.getElementById("paragraaf");
-    let txt = document.createTextNode(resultaat);
-    getP.appendChild(txt);
+    let div = document.getElementById('content');
+    let p = document.createElement('p');
+    p.innerText = `My name is ${data.name} and I am ${data.age} years old.`;
+    div.appendChild(p);
 }

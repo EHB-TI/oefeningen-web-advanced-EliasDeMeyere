@@ -1,9 +1,6 @@
 {
-	"Name": "Elias De Meyere",
-	"Age": "20",
-	"Degree": "TI",
-	"Courses": {
-		"Course1": "Web Advanced",
-		"Course2": "Programming Essentials"
-	}
+	"name": "Elias De Meyere",
+	"age": 20,
+	"degree": "TI",
+	"courses": ["Web Advanced", "Integration project"]
 }
